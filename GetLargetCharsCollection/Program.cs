@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using GetLargetCharsCollection;
 
 namespace GetLargestCharsCollection
 {
@@ -22,59 +23,74 @@ namespace GetLargestCharsCollection
             requests.Add("аaaaaaaaaaaaaaaaaaaaa bbbbbbbbbb,с");
 
             GetCharCollection result = new GetCharCollection();
-            for (int i = 0; i < requests.Count; i++)
+            Console.WriteLine("Please, enter \"test\" and press \"Enter\" if your wont ot see test demo");
+            Console.WriteLine("or enter your custom string like \"ааа bbb с\", press \"Enter\" and see result");
+            string custom = Console.ReadLine();
+            if (custom != null && custom.Equals("test"))
+            {
+                for (int i = 0; i < requests.Count; i++)
+                {
+
+                    Console.WriteLine("Request: " + requests[i]);
+                    string print = new string(result.GetCollection(requests[i], out int iteration));
+                    Console.WriteLine("Result: " + print);
+                    Console.WriteLine("iteration count:" + iteration);
+                    Console.WriteLine();
+                }
+            }
+            else
             {
 
-                Console.WriteLine("Request: " + requests[i]);
-                string print = new string(result.GetCollection(requests[i], out int iteration));
-                Console.WriteLine("Result: " + print);
-                Console.WriteLine("iteration count:" + iteration);
-                Console.WriteLine();
             }
             Console.ReadKey();
         }
     }
 
-    class GetCharCollection
+    sealed class GetCharCollection : ICharCollection
     {
-        protected internal char[] GetCollection(string request, out int count)
+        public char[] GetCollection(string request, out int count)
         {
-            if (string.IsNullOrEmpty(request)) { count = 0; return null; }
-
-            string foo = Regex.Replace(request, @"[^\w]", "", RegexOptions.Compiled);
-            if (foo.Length <= 2) { count = 0; return foo.ToCharArray(); }
-
-
-            int largestLength = 0;
-            char[] bar = foo.ToCharArray();
-            Array.Sort(bar); //на всякий случай, если вы захотите вводить данные беспорядочно
-
-            string result = string.Empty;
-            count = 0;
-            for (int i = 0; i < foo.Length;)
+            try
             {
-                int lastIndex = foo.LastIndexOf(bar[i]);
-                int currentLength = lastIndex + 1 - i;
-                if (currentLength > (float)foo.Length / 2) return foo.Substring(i, currentLength).ToCharArray();
-                if (largestLength < currentLength)
+                if (string.IsNullOrEmpty(request)) { count = 0; return null; }
+
+                string foo = Regex.Replace(request, @"[^\w]", "", RegexOptions.Compiled);
+                if (foo.Length <= 2) { count = 0; return foo.ToCharArray(); }
+
+                int largestLength = 0;
+                string result = string.Empty;
+                count = 0;
+                char[] bar = foo.ToCharArray();
+                Array.Sort(bar); //на всякий случай, если вы захотите вводить данные беспорядочно
+                foo = new string(bar); 
+                
+                for (int i = 0; i < foo.Length;)
                 {
-                    /*startIndexes.Clear();
-                    startIndexes.Add(i);*/
-                    largestLength = lastIndex - i + 1;
-                    result = string.Empty;
-                    result = foo.Substring(i, currentLength);
+                    int lastIndex = foo.LastIndexOf(bar[i]);
+                    int currentLength = lastIndex + 1 - i;
+                    if (currentLength > (float)foo.Length / 2) return foo.Substring(i, currentLength).ToCharArray();
+                    if (largestLength < currentLength)
+                    {
+                        largestLength = currentLength;
+                        result = string.Empty;
+                        result = foo.Substring(i, currentLength);
+                    }
+                    else if (largestLength == currentLength)
+                    {
+                        result += foo.Substring(i, currentLength);
+                    }
+                    i += currentLength;
+                    if (largestLength == 1 && i == foo.Length-1) return foo.ToCharArray();
+                    count++;
                 }
-                else if (largestLength == currentLength)
-                {
-                    /*startIndexes.Add(i);
-                    largestLength = lastIndex - i + 1;*/
-                    result += foo.Substring(i, currentLength);
-                }
-                i = i + lastIndex + 1;
-                count++;
+                
+                return result.ToCharArray();
             }
-            if (largestLength == 1) return foo.ToCharArray();
-            return result.ToCharArray();
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
