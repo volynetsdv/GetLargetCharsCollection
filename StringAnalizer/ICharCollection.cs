@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GetLargetCharsCollection
+namespace StringAnalizer
 {
-    interface ICharCollection
+    public interface ICharCollection
     {
         char[] GetCollection(string request, out int count);
     }
