@@ -9,14 +9,21 @@ namespace StringAnalizer
 {
     public class GetCharCollection : ICharCollection
     {
-        public virtual char[] GetCollection(string request, out int count)
+        public event EventHandler<StringFormating> GetCharsCollection;
+        public virtual void GetCollection(string request)
         {
+            int count = 0;
             try
             {
-                if (string.IsNullOrEmpty(request)) { count = 0; return null; }
-
+                if (string.IsNullOrEmpty(request)) { GetCharsCollection(this, null); }
+                
                 string foo = Regex.Replace(request, @"[^\w]", "", RegexOptions.Compiled);
-                if (foo.Length <= 2) { count = 0; return foo.ToCharArray(); }
+                if (foo.Length <= 2)
+                {
+                    count = 0;
+                    GetCharsCollection(this, new StringFormating(foo.ToCharArray(), count));
+                    return;
+                }
 
                 int largestLength = 0;
                 string result = string.Empty;
@@ -29,7 +36,11 @@ namespace StringAnalizer
                 {
                     int lastIndex = foo.LastIndexOf(bar[i]);
                     int currentLength = lastIndex + 1 - i;
-                    if (currentLength > (float)foo.Length / 2) return foo.Substring(i, currentLength).ToCharArray();
+                    if (currentLength > (float) foo.Length / 2)
+                    {
+                        GetCharsCollection(this, new StringFormating(foo.Substring(i, currentLength).ToCharArray(),count));
+                        return;
+                    }
                     if (largestLength < currentLength)
                     {
                         largestLength = currentLength;
@@ -41,16 +52,20 @@ namespace StringAnalizer
                         result += foo.Substring(i, currentLength);
                     }
                     i += currentLength;
-                    if (largestLength == 1 && i == foo.Length - 1) return foo.ToCharArray();
+                    if (largestLength == 1 && i == foo.Length - 1)
+                    {
+                        GetCharsCollection(this, new StringFormating(foo.ToCharArray(),count));
+                        return;
+                    }
                     count++;
                 }
-                return result.ToCharArray();
+                GetCharsCollection(this, new StringFormating(result.ToCharArray(),count)); 
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 count = 0;
-                return null;
+                GetCharsCollection(this, null);
             }
         }
         

@@ -8,6 +8,7 @@ namespace StringAnalizer
 {
     public interface ICharCollection
     {
-        char[] GetCollection(string request, out int count);
+        void GetCollection(string request);
+        event EventHandler<StringFormating> GetCharsCollection;
     }
 }

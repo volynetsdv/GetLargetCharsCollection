@@ -43,6 +43,7 @@
     <Compile Include="GetCharCollection.cs" />
     <Compile Include="ICharCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringFormating.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

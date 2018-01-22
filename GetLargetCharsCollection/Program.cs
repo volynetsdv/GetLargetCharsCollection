@@ -38,11 +38,10 @@ namespace GetLargestCharsCollection
                     {
                         for (int i = 0; i < requests.Count; i++)
                         {
+                            result.GetCharsCollection += Result_GetCharsCollection;
                             Console.WriteLine("Request: " + requests[i]);
-                            string print = new string(result.GetCollection(requests[i], out int iteration));
-                            Console.WriteLine("Result: " + print);
-                            Console.WriteLine("iteration count:" + iteration);
-                            Console.WriteLine();
+                            result.GetCollection(requests[i]);
+                            result.GetCharsCollection -= Result_GetCharsCollection;
                         }
                     }
                     else if (customString != null && customString.Equals("exit"))
@@ -51,10 +50,9 @@ namespace GetLargestCharsCollection
                     }
                     else if (customString != null)
                     {
-                        string print = new string(result.GetCollection(customString, out int iteration));
-                        Console.WriteLine("Result: " + print);
-                        Console.WriteLine("iteration count:" + iteration);
-                        Console.WriteLine();
+                        result.GetCharsCollection += Result_GetCharsCollection;
+                        Console.WriteLine("Request: " + customString);
+                        result.GetCollection(customString);
                     }
                     else
                     {
@@ -69,6 +67,16 @@ namespace GetLargestCharsCollection
                 throw;
             }
         }
+
+        private static void Result_GetCharsCollection(object sender, StringFormating e)
+        {    
+            string print = new string(e.Response);
+            Console.WriteLine("Result: " + print);
+            Console.WriteLine("iteration count:" + e.Count);
+            Console.WriteLine();
+        }
+
+
         static void Main(string[] args)
         {
             ConsoleUI();
