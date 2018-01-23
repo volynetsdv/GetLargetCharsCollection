@@ -36,12 +36,11 @@ namespace GetLargestCharsCollection
                     string customString = Console.ReadLine();
                     if (customString != null && customString.Equals("test"))
                     {
+                        result.GetCharsCollection += Result_GetCharsCollection;
                         for (int i = 0; i < requests.Count; i++)
                         {
-                            result.GetCharsCollection += Result_GetCharsCollection;
                             Console.WriteLine("Request: " + requests[i]);
                             result.GetCollection(requests[i]);
-                            result.GetCharsCollection -= Result_GetCharsCollection;
                         }
                     }
                     else if (customString != null && customString.Equals("exit"))

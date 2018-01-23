@@ -16,10 +16,14 @@ namespace TestStringAnalizer
         public void GetCollection_CharArrayValidation()
         {
             ICharCollection collection = new GetCharCollection();
-            //int count = 0;
-            //char[] test = collection.GetCollection(Guid.NewGuid().ToString(),out count);
-            //string testString = new string(test);
-            //Assert.That(testString, Is.InRange('a','z')); //переписать на свежую голову
+            collection.GetCharsCollection += Collection_GetCharsCollection;
+            collection.GetCollection("aaa, ./ddddwww");
+        }
+
+        private void Collection_GetCharsCollection(object sender, StringFormating e)
+        {
+            string result = new string(e.Response);
+            Assert.That(result, Is.EqualTo("dddd"));
         }
     }
 }

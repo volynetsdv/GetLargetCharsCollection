@@ -27,7 +27,6 @@ namespace StringAnalizer
 
                 int largestLength = 0;
                 string result = string.Empty;
-                count = 0;
                 char[] bar = foo.ToCharArray();
                 Array.Sort(bar); //на всякий случай, если вы захотите вводить данные беспорядочно
                 foo = new string(bar);
