@@ -1,0 +1,5 @@
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\StringAnalizer\bin\Debug\StringAnalizer.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\StringAnalizer\bin\Debug\StringAnalizer.pdb
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\StringAnalizer\obj\Debug\StringAnalizer.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\StringAnalizer\obj\Debug\StringAnalizer.pdb
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\StringAnalizer\obj\Debug\StringAnalizer.csprojResolveAssemblyReference.cache

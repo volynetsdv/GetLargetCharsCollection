@@ -53,6 +53,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleStringAnalizer\SimpleStringAnalizer.csproj">
+      <Project>{240b34ad-361d-413f-97bb-fd6cb7b2bb48}</Project>
+      <Name>SimpleStringAnalizer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StringAnalizer\StringAnalizer.csproj">
       <Project>{e5a1fba1-1851-4345-a72d-4482b9404df0}</Project>
       <Name>StringAnalizer</Name>

@@ -1,0 +1,12 @@
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\GetLargetCharsCollection.exe.config
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\GetLargetCharsCollection.exe
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\GetLargetCharsCollection.pdb
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\obj\Debug\GetLargetCharsCollection.exe
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\obj\Debug\GetLargetCharsCollection.pdb
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\StringAnalizer.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\StringAnalizer.pdb
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\obj\Debug\GetLargetCharsCollection.csprojResolveAssemblyReference.cache
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\nunit.framework.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\nunit.framework.xml
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\SimpleStringAnalizer.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\GetLargetCharsCollection\bin\Debug\SimpleStringAnalizer.pdb

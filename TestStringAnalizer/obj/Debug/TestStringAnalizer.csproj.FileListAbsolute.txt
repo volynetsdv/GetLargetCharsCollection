@@ -1,0 +1,9 @@
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\bin\Debug\TestStringAnalizer.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\bin\Debug\TestStringAnalizer.pdb
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\bin\Debug\nunit.framework.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\bin\Debug\StringAnalizer.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\bin\Debug\StringAnalizer.pdb
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\bin\Debug\nunit.framework.xml
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\obj\Debug\TestStringAnalizer.csprojResolveAssemblyReference.cache
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\obj\Debug\TestStringAnalizer.dll
+E:\Work\Dropbox\IT\Work\Консольки\GetLargetCharsCollection\TestStringAnalizer\obj\Debug\TestStringAnalizer.pdb

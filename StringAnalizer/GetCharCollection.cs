@@ -10,7 +10,7 @@ namespace StringAnalizer
     public class GetCharCollection : ICharCollection
     {
         public event EventHandler<StringFormating> GetCharsCollection;
-        public virtual void GetCollection(string request)
+        public void GetCollection(string request)
         {
             int count = 0;
             try
